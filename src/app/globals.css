@@ -20,7 +20,11 @@
 }
 
 body {
-  background: var(--background);
+  background: #ffffff; /* Establecemos un fondo blanco o claro fijo para el body */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Asegúrate de que tus secciones tengan su propio color de fondo si no deben ser transparentes */
+/* Por ejemplo, en tus archivos .module.scss para HeroSection, FeaturesSection, InfoSection, etc. */
+/* Verifica que tengan algo como: background-color: #f0f0f0; o background-color: white; si es necesario */

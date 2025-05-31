@@ -1,0 +1,64 @@
+.nosotrosSection {
+  padding: 4rem 2rem;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex; // Use flexbox or grid for layout with image
+  align-items: center; // Align items vertically
+  gap: 2rem; // Space between text and image areas
+  max-width: 1200px; // Limit content width
+  margin: 0 auto; // Center the section
+}
+
+.contentWrapper {
+  flex: 1; // Allow text content to take available space
+  max-width: 600px; // Limit width of text content
+}
+
+.nosotrosSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.nosotrosSection p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.saberMasLink {
+  color: #ff00ff; // Example color, adjust as needed based on image
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.imagePlaceholder {
+  flex: 1; // Allow image area to take available space
+  min-height: 300px; // Minimum height for the image area
+  background-color: #e0e0e0; // Placeholder background color
+  // Add styles for the actual image if it's an element, or use background-image here
+  // background-image: url('/path/to/your/image.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+@media (max-width: 768px) {
+  .nosotrosSection {
+    flex-direction: column; // Stack content and image on smaller screens
+    text-align: center;
+  }
+
+  .contentWrapper {
+    max-width: 100%; // Full width on small screens
+  }
+
+  .nosotrosSection h2,
+  .nosotrosSection p,
+  .saberMasLink {
+    text-align: center; // Center text
+  }
+}

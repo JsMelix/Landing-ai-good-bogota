@@ -1,0 +1,78 @@
+.contributeSection {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8; /* Un gris claro de fondo similar a la imagen */
+    color: var(--foreground);
+    display: flex; /* Usa flexbox para alinear contenido y botón */
+    justify-content: space-between; /* Espacia el contenido y el botón */
+    align-items: center; /* Centra verticalmente */
+    max-width: 1200px; /* Limita el ancho */
+    margin: 0 auto; /* Centra la sección */
+    gap: 2rem; /* Espacio entre el contenido y el botón */
+  
+    @media (max-width: 768px) {
+      flex-direction: column; /* Apila en pantallas pequeñas */
+      text-align: center; /* Centra el texto */
+      gap: 1.5rem;
+    }
+  }
+  
+  .contentWrapper {
+    flex: 1; /* Permite que el contenido ocupe el espacio */
+    max-width: 700px; /* Limita el ancho del contenido textual */
+  
+    @media (max-width: 768px) {
+      max-width: 100%; /* Ocupa todo el ancho en móvil */
+    }
+  }
+  
+  .contributeSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--foreground);
+  }
+  
+  .contributeSection p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+  }
+  
+  .socialIcons {
+    display: flex; /* Usa flexbox para los íconos */
+    gap: 0.8rem; /* Espacio entre íconos */
+  
+    @media (max-width: 768px) {
+      justify-content: center; /* Centra los íconos en móvil */
+    }
+  }
+  
+  .iconPlaceholder {
+      font-size: 1.5rem; /* Tamaño del placeholder */
+      color: #666; /* Color gris para los placeholders */
+      /* Deberías reemplazar esto con estilos para tus íconos reales (SVG, fuentes de íconos, etc.) */
+  }
+  
+  
+  .contributeButton {
+    display: inline-block; /* Permite aplicar padding y margin */
+    background: linear-gradient(to right, #ff416c, #ff4b2b); /* Gradiente similar al de la imagen */
+    color: white; /* Texto blanco */
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+    flex-shrink: 0; /* Evita que el botón se encoja */
+  
+    &:hover {
+      background: linear-gradient(to right, #ff4b2b, #ff416c); /* Invierte el gradiente al pasar el ratón */
+    }
+  
+    @media (max-width: 768px) {
+       width: 80%; /* Ancho en móvil */
+       max-width: 300px; /* Ancho máximo en móvil */
+    }
+  }

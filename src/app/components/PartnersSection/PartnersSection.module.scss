@@ -1,0 +1,50 @@
+.partnersSection {
+  padding: 4rem 2rem;
+  background-color: #ffffff; /* Fondo blanco o claro */
+  color: var(--foreground);
+  text-align: center; /* Centra el título y los logos */
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem; /* Espacio debajo del título */
+  font-weight: bold;
+}
+
+.partnersGrid {
+  display: flex; /* Usamos flexbox para alinear los logos */
+  justify-content: center; /* Centra los logos horizontalmente */
+  align-items: center; /* Centra los logos verticalmente (si tienen diferentes alturas) */
+  flex-wrap: wrap; /* Permite que los logos salten de línea si no caben */
+  gap: 3rem; /* Espacio entre los logos */
+  max-width: 1000px; /* Limita el ancho del contenedor de logos */
+  margin: 0 auto; /* Centra el contenedor de logos */
+}
+
+.partnerLogo {
+  /* Estilos si necesitas un contenedor alrededor de cada logo */
+  // padding: 1rem;
+  // border: 1px solid #ddd;
+  // border-radius: 8px;
+
+  img {
+    display: block; /* Ayuda con la alineación */
+    max-width: 150px; /* Asegura que los logos no sean demasiado grandes */
+    height: auto; /* Mantiene la relación de aspecto */
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .partnersGrid {
+    gap: 2rem; /* Reduce el espacio entre logos en móvil */
+  }
+
+  .partnerLogo img {
+     max-width: 100px; /* Reduce el tamaño de los logos en móvil */
+  }
+} 

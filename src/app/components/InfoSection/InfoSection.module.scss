@@ -1,0 +1,91 @@
+.infoSection {
+  padding: 4rem 2rem;
+  background-color: #f0f0f0; /* Color de fondo claro similar al de la imagen */
+  color: var(--foreground); /* Usamos el color de primer plano definido en globals.css */
+  display: flex; /* Usamos flexbox para la disposición lado a lado */
+  align-items: center; /* Alineamos verticalmente al centro */
+  gap: 4rem; /* Espacio entre el texto y la imagen */
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centramos la sección en la página */
+}
+
+.contentWrapper {
+  flex: 1; /* Permite que el contenedor de texto ocupe el espacio disponible */
+  max-width: 600px; /* Limita el ancho del texto para una mejor legibilidad */
+}
+
+.infoSection h2 {
+  font-size: 2.5rem; /* Tamaño del título */
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--foreground); /* Color del título */
+}
+
+.infoSection p {
+  font-size: 1rem; /* Tamaño del párrafo */
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin-bottom: 1.5rem;
+  color: var(--foreground); /* Color del párrafo */
+}
+
+.saberMasLink {
+  color: #ff00ff; /* Color del enlace "Saber más", ajusta si es necesario */
+  text-decoration: none; /* Sin subrayado por defecto */
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+  }
+}
+
+.imageGallery {
+  flex: 1; /* Permite que el contenedor de la galería ocupe el espacio restante */
+  position: relative; /* Necesario para posicionar las imágenes absolutamente */
+  width: 100%; /* Ocupa el ancho disponible */
+  min-height: 300px; /* Altura mínima para el área de la galería */
+  display: flex; /* Usa flexbox para centrar la imagen */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.imageGallery img {
+  position: absolute; /* Posiciona las imágenes una encima de la otra */
+  top: 0;
+  left: 0;
+  width: 100%; /* La imagen ocupa el ancho del contenedor de la galería */
+  height: 100%; /* La imagen ocupa el alto del contenedor de la galería */
+  object-fit: contain; /* Ajusta la imagen para que quepa sin ser cortada, manteniendo aspecto */
+  opacity: 0; /* Oculta todas las imágenes por defecto */
+  transition: opacity 1s ease-in-out; /* Aplica una transición suave a la opacidad */
+}
+
+.imageGallery img.visible {
+  opacity: 1; /* Muestra la imagen que tiene la clase 'visible' */
+}
+
+@media (max-width: 768px) {
+  .infoSection {
+    flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+    gap: 2rem; /* Reduce el espacio entre elementos apilados */
+    text-align: center; /* Centra el texto */
+  }
+
+  .contentWrapper {
+    max-width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+  }
+
+  .infoSection h2,
+  .infoSection p,
+  .saberMasLink {
+    text-align: center; /* Asegura que el texto esté centrado */
+  }
+
+  .imageGallery {
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+    height: 200px; /* Ajusta la altura según sea necesario */
+    min-height: 200px; /* Ajusta la altura mínima también para pantallas pequeñas */
+  }
+  .imageGallery img {
+     /* Los estilos de imagen ya son responsivos dentro de .imageGallery */
+  }
+} 

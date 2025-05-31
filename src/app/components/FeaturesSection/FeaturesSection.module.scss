@@ -10,28 +10,57 @@
 
 .sectionsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho */
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho en pantallas grandes */
+  gap: 2rem; /* Espacio entre elementos */
 }
 
 .sectionItem {
+  /* Puedes añadir algo de padding o borde a cada item si quieres */
+  // padding: 1.5rem;
+  // border: 1px solid #eee;
+  // border-radius: 8px;
+
   h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #333; /* Color oscuro para los títulos */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    color: #333;
+    /* white-space: nowrap; remueve esto si no quieres que el título evite saltos de línea en pantallas pequeñas */
   }
 
   p {
     font-size: 1rem;
     line-height: 1.5;
-    color: #666; /* Color gris para el texto */
+    color: #666;
   }
 }
 
-/* Eliminamos la media query específica para .sectionsGrid */
-/* @media (max-width: 768px) {
+/* Media Query para pantallas medianas (por ejemplo, tablets y hacia abajo) */
+@media (max-width: 768px) {
   .sectionsGrid {
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    gap: 1.5rem; /* Ajusta el espacio */
   }
-} */ 
+   .sectionItem {
+      text-align: center; /* Centra el texto en pantallas medianas */
+   }
+}
+
+/* Media Query para pantallas pequeñas (por ejemplo, móviles y hacia abajo) */
+@media (max-width: 480px) {
+  .sectionsGrid {
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas (apilados) */
+    gap: 1rem; /* Ajusta el espacio */
+  }
+   .sectionItem {
+      text-align: left; /* Puedes volver a alinear a la izquierda o mantener centrado */
+   }
+    .sectionItem h2 {
+        /* Ajusta el tamaño de fuente si es necesario en móviles */
+        font-size: 1.3rem;
+        white-space: normal; /* Permite que el título salte de línea en móviles */
+    }
+     .sectionItem p {
+        /* Ajusta el tamaño de fuente si es necesario en móviles */
+        font-size: 0.9rem;
+     }
+}

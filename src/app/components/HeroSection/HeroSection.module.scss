@@ -1,14 +1,25 @@
 .heroSection {
-  height: 100vh;
+  height: 100vh; /* Mantiene la altura de la pantalla completa */
   width: 100%;
-  background-image: url('/robot-background.png');
+  background-image: url('/robot-background.png'); /* Asegúrate de que la ruta sea correcta */
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
-  align-items: center;
-  padding: 0 5rem;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido (útil en móvil) */
+  padding: 0 5rem; /* Padding a los lados */
   color: white;
+  text-align: center; /* Centra el texto en móvil */
+
+  @media (max-width: 768px) {
+    padding: 0 2rem; /* Reduce el padding en pantallas medianas y pequeñas */
+    height: 80vh; /* Puedes reducir la altura en tablets si prefieres */
+  }
+   @media (max-width: 480px) {
+    padding: 0 1rem; /* Reduce aún más el padding en móviles muy pequeños */
+    height: 70vh; /* Puedes reducir la altura en móviles si prefieres */
+   }
 }
 
 .overlay {
@@ -19,25 +30,42 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.6) 0%,    /* Oscuro en la parte superior */
-    rgba(0, 0, 0, 0.3) 30%,   /* Más claro al 30% de altura */
-    rgba(0, 0, 0, 0.1) 50%,   /* Más claro aún en el centro */
-    rgba(0, 0, 0, 0.5) 70%,   /* Oscureciendo más al 70% */
-    rgba(0, 0, 0, 0.8) 100%   /* Más oscuro al final (80% opacidad) */
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.5) 70%,
+    rgba(0, 0, 0, 0.8) 100%
   );
+  /* Puedes ajustar la opacidad o el gradiente en media queries si la imagen de fondo se ve demasiado oscura/clara */
 }
 
 .content {
   position: relative;
   z-index: 10;
-  max-width: 600px;
+  max-width: 600px; /* Ancho máximo del contenido en desktop */
+  /* Centra el contenido si el heroSection tiene justify-content: center; */
+   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 90%; /* Permite que el contenido ocupe más ancho en tablets */
+  }
+   @media (max-width: 480px) {
+    max-width: 100%; /* Permite que el contenido ocupe todo el ancho en móviles */
+   }
 }
 
 .logo {
   margin-bottom: 1.5rem;
-  
+
   img {
     width: 80px;
+
+    @media (max-width: 768px) {
+        width: 60px; /* Reduce el tamaño del logo */
+    }
+     @media (max-width: 480px) {
+        width: 50px; /* Reduce aún más en móviles muy pequeños */
+     }
   }
 }
 
@@ -45,17 +73,35 @@
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
+
+   @media (max-width: 768px) {
+       font-size: 2.8rem; /* Reduce el tamaño del título */
+       margin-bottom: 1rem;
+   }
+    @media (max-width: 480px) {
+       font-size: 2.2rem; /* Reduce aún más en móviles muy pequeños */
+       margin-bottom: 0.8rem;
+    }
 }
 
 .description {
   font-size: 1.2rem;
   margin-bottom: 2rem;
   line-height: 1.6;
+
+   @media (max-width: 768px) {
+       font-size: 1rem; /* Reduce el tamaño de la descripción */
+       margin-bottom: 1.5rem;
+   }
+    @media (max-width: 480px) {
+       font-size: 0.9rem; /* Reduce aún más en móviles muy pequeños */
+       margin-bottom: 1rem;
+    }
 }
 
 .contactBtn {
-  background-color: #FFD100; /* Color amarillo como en la imagen */
-  color: #000; /* Texto negro para mejor contraste */
+  background-color: #FFD100;
+  color: #000;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 4px;
@@ -63,8 +109,18 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+  display: inline-block; /* Asegura que se ajuste bien con el padding */
+
   &:hover {
     background-color: darken(#FFD100, 10%);
   }
+
+   @media (max-width: 768px) {
+       padding: 0.7rem 1.8rem; /* Ajusta padding del botón */
+       font-size: 0.9rem; /* Ajusta tamaño de fuente */
+   }
+    @media (max-width: 480px) {
+       padding: 0.6rem 1.5rem; /* Reduce padding del botón */
+       font-size: 0.8rem; /* Reduce tamaño de fuente */
+    }
 }

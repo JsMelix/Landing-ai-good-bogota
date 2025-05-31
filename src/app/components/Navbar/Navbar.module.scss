@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
-  align-items: center; /* Alinea verticalmente */
-  padding: 0.8rem 2rem;
+  align-items: center;
+  padding: 0.8rem 2rem; /* Padding por defecto */
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: fixed;
@@ -9,28 +9,41 @@
   top: 0;
   left: 0;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+      padding: 0.8rem 1rem; /* Reduce el padding en pantallas medianas y pequeñas */
+      /* Puedes añadir justify-content: center; aquí si quieres centrar logo y botón */
+      justify-content: space-between; // Mantener space-between o cambiar a center/space-around
+  }
+    @media (max-width: 480px) {
+       padding: 0.6rem 0.8rem; /* Reduce aún más el padding en móviles muy pequeños */
+    }
 }
 
 .logo {
   display: flex;
   align-items: center;
-  /* Podrías querer añadir un margin-right si quieres más espacio entre el logo y los enlaces */
-  margin-right: 2rem; // Espacio entre el logo y los enlaces
+  margin-right: 2rem;
 
   img {
-    height: 50px; /* Ajusta la altura del logo */
+    height: 50px;
+
+    @media (max-width: 768px) {
+      height: 40px; /* Reduce el tamaño del logo */
+    }
+     @media (max-width: 480px) {
+      height: 35px; /* Reduce aún más en móviles muy pequeños */
+     }
   }
 }
 
 .navLinks {
   display: flex;
-  gap: 2.5rem; /* Espacio entre los enlaces de navegación */
-  /* Esto empujará este bloque y el botón al extremo derecho si no hay suficiente espacio */
-   margin-left: auto; /* Empuja los enlaces y lo que le sigue hacia la derecha */
-
+  gap: 2.5rem;
+  margin-left: auto;
 
   @media (max-width: 768px) {
-      display: none; /* Oculta los enlaces en pantallas pequeñas */
+      display: none; /* Oculta los enlaces */
   }
 }
 
@@ -66,14 +79,15 @@
 }
 
 .contribuir {
-  /* Contenedor para el botón "CONTRIBUIR" */
-  margin-left: 2rem; /* Espacio entre los enlaces y el botón */
-
+  margin-left: 2rem;
 
    @media (max-width: 768px) {
-      /* Puedes ajustar la visibilidad o estilo del botón en móvil */
-      margin-left: 1rem; // Ajusta el margen en móvil
+      margin-left: 1rem;
+      /* Si centras los elementos en .navbar en móvil, podrías no necesitar este margin-left */
    }
+    @media (max-width: 480px) {
+       margin-left: 0.8rem; /* Ajusta el margen en móviles muy pequeños */
+    }
 
   .contribuirBtn {
     display: inline-block;
@@ -85,29 +99,20 @@
     font-weight: bold;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Evita que el botón se encoja demasiado */
 
     &:hover {
       background: linear-gradient(to right, #ff4b2b, #ff416c);
     }
-  }
-}
 
-/* Media query para responsive */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.8rem 1rem;
-    /* En móvil, puedes querer centrar los elementos o ajustarlos de otra forma */
-    /* Por ejemplo, justify-content: center; o space-around; */
-  }
-
-  .logo img {
-    height: 40px;
-  }
-
-  /* .navLinks está display: none; en esta media query */
-
-  .contribuir .contribuirBtn {
+    @media (max-width: 768px) {
       padding: 0.6rem 1.2rem;
       font-size: 0.9rem;
+    }
+     @media (max-width: 480px) {
+      padding: 0.5rem 1rem; /* Reduce padding del botón */
+      font-size: 0.85rem; /* Reduce tamaño de fuente */
+      border-radius: 20px; /* Ajusta bordes redondeados */
+     }
   }
 }

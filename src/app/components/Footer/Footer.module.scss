@@ -1,87 +1,112 @@
 .footer {
     background-color: #1a1a1a; /* Color de fondo oscuro similar al de la imagen */
     color: #cccccc; /* Color de texto gris claro */
-    padding: 3rem 2rem;
+    padding: 3rem 2rem; /* Padding por defecto */
+
+    @media (max-width: 768px) {
+        padding: 2rem 1.5rem; /* Reduce el padding en pantallas medianas y pequeñas */
+    }
+     @media (max-width: 480px) {
+        padding: 1.5rem 1rem; /* Reduce aún más el padding en móviles muy pequeños */
+     }
   }
-  
+
   .container {
-    max-width: 1200px; /* Limita el ancho del contenido */
-    margin: 0 auto; /* Centra el contenedor */
-    display: flex; /* Usa flexbox para las columnas */
-    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
-    justify-content: space-between; /* Distribuye el espacio entre las columnas */
-    gap: 2rem; /* Espacio entre las columnas */
-  
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem; /* Espacio entre las columnas en desktop */
+
     @media (max-width: 768px) {
       flex-direction: column; /* Apila las columnas en pantallas pequeñas */
-      align-items: center; /* Centra las columnas apiladas */
-      text-align: center; /* Centra el texto en móvil */
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem; /* Reduce el espacio entre las columnas apiladas */
     }
   }
-  
+
   .col {
-    /* Estilos base para las columnas */
-    flex: 1; /* Permite que las columnas crezcan */
-    min-width: 150px; /* Ancho mínimo para evitar que se vuelvan demasiado estrechas */
-    
+    flex: 1;
+    min-width: 150px;
+
     @media (max-width: 768px) {
-      width: 100%; /* Ocupa todo el ancho en móvil */
-      min-width: auto; /* Elimina el ancho mínimo en móvil */
+      width: 100%;
+      min-width: auto;
     }
   }
-  
+
   .logoContainer {
-      /* Contenedor para la imagen del logo */
-      margin-bottom: 1rem; /* Espacio debajo del logo */
-      display: inline-block; /* Permite centrarlo si el texto está centrado */
-      /* Si usas Next/Image, width y height se definen en el componente, pero puedes añadir estilos aquí si necesitas un fondo, borde, etc. */
+      margin-bottom: 1rem;
+      display: inline-block;
+      /* Ajusta el tamaño de la imagen si es necesario */
+      img {
+          max-width: 100%; /* Asegura que la imagen no desborde en móvil */
+          height: auto;
+      }
   }
-  
-  
+
+
   .col h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #ffffff; /* Color de los títulos de columna */
+    color: #ffffff;
+
+    @media (max-width: 768px) {
+        font-size: 1.1rem; /* Ajusta tamaño en pantallas pequeñas */
+    }
   }
-  
+
   .col p {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 0.8rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem; /* Ajusta tamaño en pantallas pequeñas */
+    }
   }
-  
+
   .col ul {
-    list-style: none; /* Elimina los puntos de la lista */
+    list-style: none;
     padding: 0;
     margin: 0;
-  
+
     li {
-      margin-bottom: 0.5rem; /* Espacio entre elementos de la lista */
-      
+      margin-bottom: 0.5rem;
+
       a {
-        color: #cccccc; /* Color de los enlaces */
-        text-decoration: none; /* Sin subrayado */
+        color: #cccccc;
+        text-decoration: none;
         font-size: 0.9rem;
-  
+
+         @media (max-width: 768px) {
+             font-size: 0.85rem; /* Ajusta tamaño en pantallas pequeñas */
+         }
+
         &:hover {
-          text-decoration: underline; /* Subrayado al pasar el ratón */
+          text-decoration: underline;
         }
       }
     }
   }
-  
+
   .socialIcons {
-    display: flex; /* Usa flexbox para los íconos sociales */
-    gap: 0.8rem; /* Espacio entre íconos */
+    display: flex;
+    gap: 0.8rem;
     margin-top: 1rem;
-    
+
      @media (max-width: 768px) {
-       justify-content: center; /* Centra los íconos en móvil */
+       justify-content: center;
      }
   }
-  
+
   .socialIconPlaceholder {
-      font-size: 1.5rem; /* Tamaño del placeholder */
-      color: #ffffff; /* Color blanco para los placeholders */
-      /* Deberías reemplazar esto con estilos para tus íconos reales (SVG, fuentes de íconos, etc.) */
+      font-size: 1.5rem;
+      color: #ffffff;
+      /* Si usas íconos reales, ajusta su tamaño aquí */
+       @media (max-width: 768px) {
+          font-size: 1.3rem; /* Ajusta tamaño en pantallas pequeñas */
+       }
   }

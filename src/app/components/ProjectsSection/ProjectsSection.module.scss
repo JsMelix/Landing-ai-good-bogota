@@ -1,110 +1,149 @@
 .projectsSection {
-  padding: 4rem 2rem;
-  background-color: #ffffff; /* Color de fondo claro, ajusta si es necesario */
-  color: var(--foreground);
-  text-align: center; /* Centra el título de la sección */
-}
-
-.sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  font-weight: bold;
-}
-
-.projectsGrid {
-  max-width: 1000px; /* Limita el ancho de la cuadrícula */
-  margin: 0 auto; /* Centra la cuadrícula */
-  display: flex; /* Usamos flexbox para apilar los items en móvil y controlarlos en desktop */
-  flex-direction: column; /* Apila por defecto en móvil */
-  gap: 4rem; /* Espacio entre los items del proyecto */
-}
-
-.projectItem {
-  display: flex; /* Usamos flexbox para la disposición imagen/texto */
-  align-items: center; /* Centra verticalmente imagen y texto */
-  gap: 2rem; /* Espacio entre la imagen y el contenido del texto */
-  background-color: #f9f9f9; /* Fondo ligero para cada item, ajusta si es necesario */
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-}
-
-.projectImage {
-  flex-shrink: 0; /* Evita que la imagen se encoja */
-  width: 300px; /* Ancho fijo para la imagen en desktop */
-  height: auto; /* Altura automática para mantener la proporción */
-  border-radius: 4px;
-  overflow: hidden; /* Asegura que la imagen redondeada no tenga esquinas afiladas */
-
-  img {
-    display: block; /* Elimina espacio extra debajo de la imagen */
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-  }
-}
-
-.projectContent {
-  flex: 1; /* Permite que el contenido de texto ocupe el espacio restante */
-  text-align: left; /* Alinea el texto a la izquierda */
-
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    padding: 4rem 2rem;
+    background-color: #ffffff;
     color: var(--foreground);
+    text-align: center;
   }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--foreground);
-  }
-}
-
-.saberMasLink {
-  color: #ff00ff; /* Color similar al de la imagen "Saber más..." */
-  text-decoration: none;
-  font-weight: bold;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-/* Estilos para alternar la posición de la imagen */
-.projectItem.imageLeft {
-  flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
-}
-
-.projectItem.imageRight {
-  flex-direction: row-reverse; /* Imagen a la derecha, texto a la izquierda */
-}
-
-
-@media (max-width: 768px) {
+  
   .sectionTitle {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
   }
-
+  
   .projectsGrid {
-    gap: 2rem; /* Reduce el espacio entre items en móvil */
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
-
+  
   .projectItem {
-    flex-direction: column; /* Apila imagen y texto en pantallas pequeñas */
-    gap: 1rem; /* Reduce el espacio en elementos apilados */
-    text-align: center; /* Centra el texto en móvil */
-    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
-
+  
   .projectImage {
-    width: 100%; /* Imagen ocupa todo el ancho en móvil */
-    max-width: 300px; /* Limita el ancho máximo incluso en móvil */
+    flex-shrink: 0;
+    width: 300px;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+  
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
-
+  
   .projectContent {
-    text-align: center; /* Asegura que el texto esté centrado en móvil */
+    flex: 1;
+    text-align: left;
+  
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--foreground);
+    }
+  
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+    }
   }
-} 
+  
+  .saberMasLink {
+    color: #ff00ff;
+    text-decoration: none;
+    font-weight: bold;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  /* Estilos para alternar la posición de la imagen (solo aplicable en pantallas grandes) */
+  .projectItem.imageLeft {
+    flex-direction: row;
+  }
+  
+  .projectItem.imageRight {
+    flex-direction: row-reverse;
+  }
+  
+  
+  /* Media Query para pantallas medianas y pequeñas */
+  @media (max-width: 768px) {
+    .sectionTitle {
+      font-size: 2rem; /* Ajusta tamaño del título */
+      margin-bottom: 2rem;
+    }
+  
+    .projectsGrid {
+      gap: 2rem;
+    }
+  
+    .projectItem {
+      flex-direction: column; /* Apila imagen y texto */
+      gap: 1.5rem; /* Ajusta el espacio entre imagen y texto apilados */
+      text-align: center; /* Centra el texto */
+      padding: 1.5rem; /* Ajusta padding */
+    }
+  
+    .projectImage {
+      width: 80%; /* Permite que la imagen ocupe un porcentaje del ancho en móvil */
+      max-width: 250px; /* Limita el ancho máximo de la imagen incluso en móvil */
+      /* Centra la imagen dentro de su contenedor flex si es más pequeña que el ancho del contenedor */
+      margin: 0 auto;
+    }
+  
+    .projectContent {
+      text-align: center; /* Asegura que el texto esté centrado */
+  
+      h3 {
+          font-size: 1.3rem; /* Reduce el tamaño del título del proyecto */
+      }
+      p {
+          font-size: 0.9rem; /* Reduce el tamaño del párrafo del proyecto */
+      }
+    }
+  }
+  
+  /* Opcional: Media Query adicional para pantallas muy pequeñas (móviles) */
+  @media (max-width: 480px) {
+     .projectsSection {
+         padding: 3rem 1rem; /* Reduce aún más el padding de la sección */
+     }
+     .sectionTitle {
+         font-size: 1.8rem; /* Reduce el tamaño del título de la sección */
+         margin-bottom: 1.5rem;
+     }
+     .projectsGrid {
+         gap: 1.5rem; /* Reduce el espacio entre items */
+     }
+      .projectItem {
+          padding: 1rem; /* Reduce el padding del item */
+          gap: 1rem; /* Reduce el espacio dentro del item */
+      }
+      .projectImage {
+          max-width: 180px; /* Reduce el tamaño máximo de la imagen en móviles muy pequeños */
+      }
+       .projectContent {
+           h3 {
+               font-size: 1.2rem; /* Reduce el tamaño del título del proyecto */
+           }
+           p {
+               font-size: 0.85rem; /* Reduce el tamaño del párrafo del proyecto */
+           }
+       }
+  }

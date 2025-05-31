@@ -1,50 +1,69 @@
 .partnersSection {
-  padding: 4rem 2rem;
-  background-color: #ffffff; /* Fondo blanco o claro */
-  color: var(--foreground);
-  text-align: center; /* Centra el título y los logos */
-}
-
-.sectionTitle {
-  font-size: 2.5rem;
-  margin-bottom: 3rem; /* Espacio debajo del título */
-  font-weight: bold;
-}
-
-.partnersGrid {
-  display: flex; /* Usamos flexbox para alinear los logos */
-  justify-content: center; /* Centra los logos horizontalmente */
-  align-items: center; /* Centra los logos verticalmente (si tienen diferentes alturas) */
-  flex-wrap: wrap; /* Permite que los logos salten de línea si no caben */
-  gap: 3rem; /* Espacio entre los logos */
-  max-width: 1000px; /* Limita el ancho del contenedor de logos */
-  margin: 0 auto; /* Centra el contenedor de logos */
-}
-
-.partnerLogo {
-  /* Estilos si necesitas un contenedor alrededor de cada logo */
-  // padding: 1rem;
-  // border: 1px solid #ddd;
-  // border-radius: 8px;
-
-  img {
-    display: block; /* Ayuda con la alineación */
-    max-width: 150px; /* Asegura que los logos no sean demasiado grandes */
-    height: auto; /* Mantiene la relación de aspecto */
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    color: var(--foreground);
+    text-align: center;
   }
-}
-
-@media (max-width: 768px) {
+  
   .sectionTitle {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+  
+    @media (max-width: 768px) {
+      font-size: 2rem; /* Reduce tamaño del título */
+      margin-bottom: 2rem;
+    }
+     @media (max-width: 480px) {
+      font-size: 1.8rem; /* Reduce aún más en móviles muy pequeños */
+      margin-bottom: 1.5rem;
+     }
   }
-
+  
   .partnersGrid {
-    gap: 2rem; /* Reduce el espacio entre logos en móvil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem; /* Espacio entre los logos en desktop */
+    max-width: 1000px;
+    margin: 0 auto;
+  
+    @media (max-width: 768px) {
+      gap: 2rem; /* Reduce el espacio entre logos en pantallas medianas */
+    }
+     @media (max-width: 480px) {
+      gap: 1.5rem; /* Reduce aún más el espacio en móviles muy pequeños */
+     }
   }
-
-  .partnerLogo img {
-     max-width: 100px; /* Reduce el tamaño de los logos en móvil */
+  
+  .partnerLogo {
+    /* Estilos si necesitas un contenedor alrededor de cada logo */
+    // padding: 1rem;
+    // border: 1px solid #ddd;
+    // border-radius: 8px;
+  
+    img {
+      display: block;
+      max-width: 150px;
+      height: auto;
+      object-fit: contain;
+    }
   }
-} 
+  
+  /* Media Query para pantallas medianas */
+  @media (max-width: 768px) {
+    .partnerLogo img {
+       max-width: 100px; /* Reduce el tamaño de los logos en pantallas medianas */
+    }
+  }
+  
+  /* Media Query para pantallas pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .partnersSection {
+        padding: 3rem 1rem; /* Reduce el padding de la sección */
+    }
+    .partnerLogo img {
+        max-width: 80px; /* Reduce aún más el tamaño de los logos en móviles muy pequeños */
+    }
+  }
